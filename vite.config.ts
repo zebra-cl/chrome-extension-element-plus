@@ -62,4 +62,13 @@ export default defineConfig({
       ]
     }),
   ],
+  build: {
+    emptyOutDir: true,  // 构建时清空该目录
+    // modulePreload: { polyfill: false },
+    rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, 'index.html'),
+      }
+    }
+  }
 })
