@@ -23,13 +23,6 @@ export default defineConfig({
       '~/': `${pathSrc}/`,
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "~/styles/element/index.scss" as *;`,
-      },
-    },
-  },
   plugins: [
     vue(),
     Components({
@@ -63,11 +56,15 @@ export default defineConfig({
     }),
   ],
   build: {
-    emptyOutDir: true,  // 构建时清空该目录
-    // modulePreload: { polyfill: false },
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        index: path.resolve(__dirname, 'index.html'),
+        popup: path.resolve(__dirname, 'popup.html'),
+        background: path.resolve(__dirname, 'background.ts'),
+        contentScript: path.resolve(__dirname, 'contentScript.ts'),
+      },
+      output: {
+        entryFileNames: '[name].js'
       }
     }
   }

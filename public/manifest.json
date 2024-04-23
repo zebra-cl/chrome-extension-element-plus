@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": " my_chrome_extension",
+  "name": "chrome_extension_name",
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
   "version": "0.1.0",
   "description": "Add your description",
@@ -14,7 +14,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": " My Chrome Extension",
+    "default_title": "Chrome Extension Title",
     "default_popup": "popup.html"
   },
   "permissions": [

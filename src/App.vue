@@ -1,23 +1,22 @@
 <template>
-  <el-config-provider namespace="ep">
-    <BaseHeader />
-    <div class="flex main-container">
-      <BaseSide />
-      <div w="full" py="4">
-        <Logos my="4" />
-        <HelloWorld msg="Hello Vue 3 + Element Plus + Vite" />
-      </div>
+  <div id="app">
+    <div>
+      <el-button type="primary" @click="count++">点击+1</el-button>
+      <el-button type="primary" @click="count--">点击-1</el-button>
     </div>
-  </el-config-provider>
+    <h1 style="text-align: center;">{{ count }}</h1>
+  </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const count = ref(0);
+</script>
 
 <style>
 #app {
-  text-align: center;
-  color: var(--ep-text-color-primary);
-}
-
-.main-container {
-  height: calc(100vh - var(--ep-menu-item-height) - 3px);
+  width: 200px;
+  padding: 10px;
 }
 </style>
